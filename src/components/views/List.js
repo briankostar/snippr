@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
 class List extends Component {
+
     render() {
         return (
             <div>
-                List [Vote - Post link]
+                List [{this.props.votes} - {this.props.link}]]
             </div>
         )
     }
