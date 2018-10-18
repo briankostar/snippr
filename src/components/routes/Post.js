@@ -8,7 +8,6 @@ class Post extends Component {
     render() {
         return (
             <div>
-                <h2>Post</h2>
                 <PostView></PostView>
             </div>
         )
