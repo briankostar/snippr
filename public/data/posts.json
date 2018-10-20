@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "votes": 24,
+        "title": "This is a title",
+        "link": "http://www.google.com",
+        "posts": [
+            {
+                "id": 1,
+                "votes": 24,
+                "title": "This is a title",
+                "link": "http://www.google.com"
+            },
+            {
+                "id": 21,
+                "votes": 35,
+                "title": "This is a title",
+                "link": "http://www.google.com"
+            },
+            {
+                "id": 3,
+                "votes": 15,
+                "title": "This is a title",
+                "link": "http://www.google.com"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "votes": 152,
+        "title": "This is a title",
+        "link": "http://www.google.com",
+        "posts": []
+    },
+    {
+        "id": 3,
+        "votes": 1231,
+        "title": "This is a title",
+        "link": "http://www.google.com",
+        "posts": []
+    }
+]

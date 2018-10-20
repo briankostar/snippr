@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import Home from './components/routes/Home'
-import Post from './components/routes/Post'
+import PostRoute from './components/routes/PostRoute'
 
 class App extends Component {
   render() {
@@ -10,7 +10,7 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <Route exact={true} path='/' render={(props) => <Home {...props} title={'Home'} />} />
-          <Route path='/post/:id' render={(props) => <Post {...props} title={'Post'} />} />
+          <Route path='/post/:id' render={(props) => <PostRoute {...props} title={'Post'} />} />
         </div>
       </BrowserRouter>
     );
