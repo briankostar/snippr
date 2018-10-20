@@ -1,28 +1,24 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { Level } from 'react-bulma-components';
 
 class Post extends Component {
-
-    constructor(props) {
-        super(props)
-        // this.state = { post: {} }
-    }
-
     componentDidMount() {
-        console.log('mounted2')
     }
     componentWillReceiveProps() {
-        console.log('got new data', this.props)
     }
     componentWillUpdate() {
-
-        console.log('componentWillUpdate', this.props)
     }
 
     render() {
         return (
             <div>
-                {/* {this.props.post} */}
-                Post
+                <Level.Side align="left">
+                    {this.props.post.votes}
+                    <Link to={`/post/${this.props.post.id}`} className="navbar-item">
+                        {this.props.post.link}
+                    </Link>
+                </Level.Side>
             </div>
         )
     }
