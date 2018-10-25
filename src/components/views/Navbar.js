@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Navbar extends Component {
 
@@ -6,9 +7,9 @@ class Navbar extends Component {
         return (
             <nav className="navbar" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
-                    <a className="navbar-item is-size-3" href="#">
+                    <Link to="/" className="navbar-item is-size-3" >
                         snippr
-                    </a>
+                    </Link>
 
                     <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                         <span aria-hidden="true"></span>
@@ -44,11 +45,11 @@ class Navbar extends Component {
                     <div className="navbar-end">
                         <div className="navbar-item">
                             <div className="buttons">
-                                <a className="button is-primary">
+                                <Link to="/signup" className="button is-primary navbar-item">
                                     <strong>Sign up</strong>
-                                </a>
-                                <a className="button is-light">
-                                    Log in</a>
+                                </Link>
+                                <Link to="/login" className="button is-light">
+                                    Log in</Link>
                             </div>
                         </div>
                     </div>

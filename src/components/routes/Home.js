@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Lists from '../views/Lists'
+import Banner from '../views/Banner'
 
 class Home extends Component {
     constructor(props) {
@@ -8,9 +9,11 @@ class Home extends Component {
     }
     render() {
         return (
-            <div className="container">
-                {/* <h1 className="is-size-3">Snipper</h1> */}
-                <Lists lists={this.tempData}></Lists>
+            <div>
+                <Banner></Banner>
+                <div className="container">
+                    <Lists lists={this.tempData}></Lists>
+                </div>
             </div>
         )
     }
