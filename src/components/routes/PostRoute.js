@@ -17,9 +17,8 @@ class PostRoute extends Component {
     }
 
     render() {
-        console.log('render called')
         return (
-            <div>
+            <div className="container">
                 <Post post={this.state.post}></Post>
             </div>
         )
