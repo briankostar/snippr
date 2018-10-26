@@ -19,7 +19,7 @@ class Navbar extends Component {
                 </div>
 
                 <div id="navbarBasicExample" className="navbar-menu">
-                    <div className="navbar-start">
+                    {/* <div className="navbar-start">
                         <a className="navbar-item">Home</a>
 
                         <a className="navbar-item">Documentation</a>
@@ -40,7 +40,7 @@ class Navbar extends Component {
                                     Report an issue</a>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className="navbar-end">
                         <div className="navbar-item">
