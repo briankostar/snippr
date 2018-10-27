@@ -2,9 +2,43 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withAuth } from '@okta/okta-react';
 
-class Navbar extends Component {
+
+export default withAuth(class Navbar extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { authenticated: null };
+        this.checkAuthentication = this.checkAuthentication.bind(this);
+        this.checkAuthentication();
+    }
+
+    async checkAuthentication() {
+        const authenticated = await this.props.auth.isAuthenticated();
+        if (authenticated !== this.state.authenticated) {
+            this.setState({ authenticated });
+        }
+    }
+
+    componentDidUpdate() {
+        this.checkAuthentication();
+    }
 
     render() {
+        if (this.state.authenticated === null) return null;
+        const authNav = this.state.authenticated ?
+            <div className="buttons">
+                <Link to="/profile" className="button is-primary navbar-item">
+                    <strong>Profile</strong>
+                </Link>
+                {/* <Link to="/login" className="button is-light">Log Out</Link> */}
+                <a href="javascript:void(0)" className="button is-light" onClick={this.props.auth.logout}>Logout</a>
+            </div> :
+            <div className="buttons">
+                <Link to="/signup" className="button is-primary navbar-item">
+                    <strong>Sign up</strong>
+                </Link>
+                <Link to="/login" className="button is-light">Log in</Link>
+                {/* <a href="javascript:void(0)" onClick={this.props.auth.login}>Login</a> */}
+            </div>
         return (
             <nav className="navbar" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
@@ -45,19 +79,14 @@ class Navbar extends Component {
 
                     <div className="navbar-end">
                         <div className="navbar-item">
-                            <div className="buttons">
-                                <Link to="/signup" className="button is-primary navbar-item">
-                                    <strong>Sign up</strong>
-                                </Link>
-                                <Link to="/login" className="button is-light">
-                                    Log in</Link>
-                            </div>
+                            {authNav}
+
                         </div>
                     </div>
                 </div>
             </nav>
         )
     }
-}
+});
 
-export default Navbar;
+// export default Navbar;
